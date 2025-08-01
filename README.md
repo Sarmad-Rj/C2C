@@ -30,8 +30,6 @@ A mini web application that converts **cryptocurrency prices to local currencies
 - 🌐 **Internet Connection Check**  
   Prevents data fetching if no internet is available.
 
-- 📸 **Custom Background**  
-  Stylish full-screen crypto background with transparent overlay for readability.
 
 ---
 
