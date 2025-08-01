@@ -32,7 +32,7 @@ def set_bg_with_overlay(image_file):
         unsafe_allow_html=True
     )
 
-set_bg_with_overlay("bg.jpg")
+set_bg_with_overlay("C2C/bg.jpg")
 
 
 
