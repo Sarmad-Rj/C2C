@@ -36,7 +36,7 @@ with col2:
 if is_connected():
 
     # Remove USD from currency list
-    currency_codes = [x for x in currency_codes if x != "USD"]
+    # currency_codes = [x for x in currency_codes if x != "USD"]
 
     # 1. Get CoinMarketCap page
     cmc = requests.get('https://coinmarketcap.com/')
