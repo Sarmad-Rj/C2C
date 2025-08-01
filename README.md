@@ -79,37 +79,7 @@ C2C/
 
 ---
 
-## 🚀 How to Run Locally
-
-1. **Clone the repo**
-
-```bash
-git clone https://github.com/yourusername/C2C.git
-cd C2C
-````
-
-2. **Create a virtual environment (optional but recommended)**
-
-```bash
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-```
-
-3. **Install dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-4. **Run Streamlit app**
-
-```bash
-streamlit run C2C/main.py
-```
-
----
-
-## 📦 Requirements
+## 📦 Requirements to use
 
 * `Python`
   
