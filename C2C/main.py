@@ -16,6 +16,7 @@ st.markdown("""
 - 🔸 **Coin to Currency** – Convert cryptocurrency price to local currency price.
 - 🔸 **Currency to Currency** – Convert between fiat currencies.
 - 🎮 **Game** – Number Guessing game.
+- Note: From the top left corner, open sidebar to see all these.
 """)
 
 
