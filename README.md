@@ -48,18 +48,17 @@ A mini web application that converts **cryptocurrency prices to local currencies
 
 C2C/
 │
-├── main.py                      # Home page (Coin to Currency)
-├── bg.jpg                       # Background image
+├── main.py                         # Home page (Coin to Currency)
 │
 ├── pages/
-│   ├── 1\_Coin\_to\_Currnecy.py    # Coin to Currency Converter
-│   ├── 2\_Currnecy\_to\_Currnecy.py# Currency to Currency Converter
-│   └── 3\_game.py                # Game page
+│   ├── 1\_Coin\_to\_Currnecy.py     # Coin to Currency Converter
+│   ├── 2\_Currnecy\_to\_Currnecy.py # Currency to Currency Converter
+│   └── 3\_game.py                   # Game page
 │
 ├── utils/
-│   └── shared\_data.py           # Shared lists like currency codes
+│   └── shared\_data.py              # Shared lists like currency codes
 │
-└── requirements.txt             # Required Python packages
+└── requirements.txt                 # Required Python packages
 
 ````
 
