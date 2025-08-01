@@ -1,6 +1,4 @@
 
-
-```markdown
 # 💱 C2C Converter
 
 A mini web application that converts **cryptocurrency prices to local currencies** and supports **currency-to-currency** conversion — built with **Python**, **Streamlit**, and **web scraping**.
