@@ -36,7 +36,7 @@ with col2:
 if is_connected():
 
     # Remove USD from currency list
-    # currency_codes = [x for x in currency_codes if x != "USD"]
+    currency_codes = [x for x in currency_codes if x != "USD"]
 
     # 1. Get CoinMarketCap page
     cmc = requests.get('https://coinmarketcap.com/')
@@ -56,7 +56,7 @@ if is_connected():
 
     # Dropdown UI
     selected_coin = st.selectbox("Choose a Cryptocurrency", coin_names)
-    selected_currency = st.selectbox("Select Currency", currency_codes, index = 145)
+    selected_currency = st.selectbox("Select Currency", currency_codes, index = 111)
     quantity = st.number_input("Quantity", value=1, min_value=1)
 
     # 2. Get USD to selected currency rate
