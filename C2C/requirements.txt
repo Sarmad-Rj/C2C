@@ -1,5 +1,1 @@
-streamlit
-requests
 beautifulsoup4
-time
-base64
