@@ -57,7 +57,7 @@ if is_connected():
     # Dropdown UI
     selected_coin = st.selectbox("Choose a Cryptocurrency", coin_names)
     selected_currency = st.selectbox("Select Currency", currency_codes, index=145)
-    quantity = st.number_input("Quantity", value=1, min_value=1)
+    quantity = st.number_input("Amount", value=1, min_value=1)
 
     # 2. Get USD to selected currency rate
     if selected_currency != "USD":
