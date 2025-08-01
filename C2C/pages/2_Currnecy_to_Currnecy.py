@@ -8,29 +8,6 @@ st.set_page_config(
     page_icon="💱", 
 )
 
-# --------------------------------------------0
-# def set_shade_only():
-#     st.markdown(
-#         """
-#         <style>
-#         .stApp {
-#             background-image: linear-gradient(
-#                 rgba(255, 127, 127, 1),
-#                 rgba(255, 255, 255, 0.75)
-                
-#             );
-#             background-size: cover;
-#             background-repeat: no-repeat;
-#             background-attachment: fixed;
-#             background-position: center;
-#         }
-#         </style>
-#         """,
-#         unsafe_allow_html=True
-#     )
-
-# set_shade_only()
-
 # --------------------------------------------1
 col1, col2 = st.columns([1, 9]) 
 
@@ -43,7 +20,7 @@ with col1:
     selected_Currency_1 =  st.selectbox("Select 1st Currency", currency_codes, index = 145)
 
 with col2:
-    quantity = st.number_input( "Quantity", value=1, min_value=1 )
+    quantity = st.number_input( "Amount", value=1, min_value=1 )
     
 selected_Currency_2 =  st.selectbox("Select 2nd Currency", currency_codes, index = 111)
 
