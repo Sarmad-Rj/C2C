@@ -100,7 +100,5 @@ if is_connected():
     if not button_pressed:
         st.markdown(f"### Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
 
-    st.divider()
-
 else:
     st.error("❌  Internet connection is required to fetch crypto and currency prices. Please check your network and refresh the page.")
