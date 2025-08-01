@@ -1,11 +1,4 @@
-That's a big milestone — **congratulations! 🎉**
-A live, fully functional mini project with frontend + backend is a huge step forward, and documenting it in a clear README is a great next move.
 
-Here’s a complete, well-structured `README.md` for your **C2C Converter** GitHub repo:
-
----
-
-## 📄 `README.md`
 
 ```markdown
 # 💱 C2C Converter
@@ -18,7 +11,7 @@ A mini web application that converts **cryptocurrency prices to local currencies
 
 ## 🌐 Live Demo
 
-🔗 **[Click here to try it live](https://<your-streamlit-cloud-link>)**
+🔗 **[Click here to try it live](https://currency-converter-by-sarmad.streamlit.app/)**
 
 ---
 
@@ -127,7 +120,6 @@ Check `requirements.txt`, but the key libraries are:
 * `streamlit`
 * `requests`
 * `beautifulsoup4`
-* `Pillow`
 
 ---
 
@@ -149,24 +141,3 @@ Deployed and working — and I’m super proud of it! 🎉
 This project is open-sourced for learning and practice.
 Feel free to fork and build upon it!
 
----
-
-```
-
----
-
-## ✅ What to Do Next
-
-1. **Replace `https://<your-streamlit-cloud-link>`** with your actual app URL  
-   (You can find it in your Streamlit Cloud dashboard.)
-
-2. Add this file to your repo:
-
-- Create a file named `README.md` in your root directory (same as `C2C/`)
-- Paste the content above into it
-- Commit and push
-
----
-
-If you'd like me to also write a short Twitter post, LinkedIn announcement, or help with a project thumbnail image, I can help with that too!
-```
