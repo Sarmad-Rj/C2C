@@ -14,8 +14,9 @@ def set_shade_only():
         <style>
         .stApp {
             background-image: linear-gradient(
-                rgba(56, 234, 140, 1),
-                rgba(255, 255, 255, 0.75)
+                rgba(255, 255, 255, 0.75),
+                rgba(255, 255, 255, 0.55),
+                rgba(56, 234, 140, 1)
             );
             background-size: cover;
             background-repeat: no-repeat;
