@@ -111,11 +111,14 @@ streamlit run C2C/main.py
 
 ## 📦 Requirements
 
-Check `requirements.txt`, but the key libraries are:
+* `Python`
+  
+but the key libraries are:
 
 * `streamlit`
 * `requests`
 * `beautifulsoup4`
+* `pillow`
 
 ---
 
