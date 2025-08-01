@@ -61,7 +61,7 @@ def guess_number(number):
         right()
     else: 
         st.warning("### ❌ You,ve Guessed the wrong number, Try again!")
-        st.markdown(f"#### The number was: :green[{rn}]")
+        st.markdown(f"#### The number was: :orange[{rn}]")
         wrong()
         
 
