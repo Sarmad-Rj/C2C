@@ -9,33 +9,6 @@ st.set_page_config(
     # layout="centered"
 )
 
-
-
-
-def set_bg_with_overlay(image_file):
-    with open(image_file, "rb") as image:
-        encoded = base64.b64encode(image.read()).decode()
-
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(0, 0, 0, 0.55)), 
-                              url("data:image/png;base64,{encoded}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-set_bg_with_overlay("C2C/bg.jpg")
-
-
-
 # Main page content
 st.title("💱 Welcome to C2C Converter")
 
