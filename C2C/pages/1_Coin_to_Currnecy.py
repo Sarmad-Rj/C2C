@@ -36,7 +36,7 @@ with col2:
 if is_connected():
 
     # Remove USD from currency list
-    currency_codes = [x for x in currency_codes if x != "USD"]
+    # currency_codes = [x for x in currency_codes if x != "USD"]
 
     # 1. Get CoinMarketCap page
     cmc = requests.get('https://coinmarketcap.com/')
@@ -45,7 +45,7 @@ if is_connected():
     # Parse HTML
     soup1 = BeautifulSoup(content, 'html.parser')
 
-    # Extract coin symbols, names, price
+    # Extract coins symbols, names, price
     coin_names_tags = soup1.find_all('p', class_='sc-65e7f566-0 iPbTJf coin-item-name')
     coin_symbols_tags = soup1.find_all(class_='sc-65e7f566-0 byYAWx coin-item-symbol')
     coin_price_tags = soup1.find_all(class_='sc-142c02c-0 lmjbLF')
@@ -56,44 +56,49 @@ if is_connected():
 
     # Dropdown UI
     selected_coin = st.selectbox("Choose a Cryptocurrency", coin_names)
-    selected_currency = st.selectbox("Select Currency", currency_codes, index = 111)
+    selected_currency = st.selectbox("Select Currency", currency_codes, index=145)
     quantity = st.number_input("Quantity", value=1, min_value=1)
 
     # 2. Get USD to selected currency rate
-    usd_to_all = requests.get(f"https://www.google.com/finance/quote/USD-{selected_currency}")
-    content_pg = usd_to_all.text
+    if selected_currency != "USD":
+        usd_to_all = requests.get(f"https://www.google.com/finance/quote/USD-{selected_currency}")
+        content_pg = usd_to_all.text
+    
+        soup2 = BeautifulSoup(content_pg, 'html.parser')
+        currency_price_tags = soup2.find_all(class_='YMlKec fxKbKc')
+        currency_price = float(currency_price_tags[0].get_text().replace("$", "").replace(",", "").strip())
 
-    soup2 = BeautifulSoup(content_pg, 'html.parser')
-    currency_price_tags = soup2.find_all(class_='YMlKec fxKbKc')
-    currency_price = currency_price_tags[0].get_text().replace("$", "").replace(",", "").strip()
-
+    # Price of selected coin in dollar
+    index = coin_names.index(selected_coin)
+    price_in_dollar = float(coin_price[index].replace('$', '').replace(',', ''))
+    
     # Define convert function
     def convert(selected_coin, selected_currency):
-        if selected_coin in coin_names:
-            index = coin_names.index(selected_coin)
-            price_in_dollar = float(coin_price[index].replace('$', '').replace(',', ''))
-        price_in_selected_coin = price_in_dollar * float(currency_price)
-        return [price_in_dollar, price_in_selected_coin]
+        price_in_selected_coin = price_in_dollar * currency_price
+        return price_in_selected_coin
 
     # Show results
     button_pressed = False
     if st.button("Convert", type="primary"):
         button_pressed = True
-        price = convert(selected_coin, selected_currency)
-        price_in_dollar = price[0]
-        converted_price = price[1]
-        if quantity == 1:
-            st.markdown(f"### Price of {selected_coin.upper()} in {selected_currency.upper()}: :blue[{converted_price:.2f}]")
-            st.markdown(f"    Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
-        elif quantity > 1:
-            quantity_price = converted_price * quantity
-            st.markdown(f"### Price of {selected_coin.upper()} in {selected_currency.upper()}: :blue[{quantity_price:.2f}]")
-            st.markdown(f"    Price of 1 {selected_coin.upper()} in {selected_currency.upper()}: :blue[{converted_price:.2f}]")
+        if selected_currency == "USD":
+            if quantity == 1:
+                st.markdown(f"### Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
+            elif quantity > 1:
+                quantity_price = price_in_dollar * quantity
+                st.markdown(f"### Price of {selected_coin.upper()} in USD: :blue[{quantity_price:.2f}]$")
+        else: 
+            converted_price = convert(selected_coin, selected_currency)
+            if quantity == 1:
+                st.markdown(f"### Price of {selected_coin.upper()} in {selected_currency.upper()}: :blue[{converted_price:.2f}]")
+                st.markdown(f"    Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
+            elif quantity > 1:
+                quantity_price = converted_price * quantity
+                st.markdown(f"### Price of {selected_coin.upper()} in {selected_currency.upper()}: :blue[{quantity_price:.2f}]")
+                st.markdown(f"    Price of 1 {selected_coin.upper()} in {selected_currency.upper()}: :blue[{converted_price:.2f}]")
 
     if not button_pressed:
-        price = convert(selected_coin, selected_currency)
-        price_in_dollar = price[0]
-        st.markdown(f"###    Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
+        st.markdown(f"### Price of {selected_coin.upper()} in USD: :blue[{price_in_dollar:.2f}$]")
 
     st.divider()
 
